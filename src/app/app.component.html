@@ -6,10 +6,10 @@
 
   <div class="site">
     <header>
-      <app-header></app-header>
+      <app-header (toggle)="drawer.toggle()"></app-header>
     </header>
     <main>
-      <button (click)="drawer.toggle()">打开侧边栏</button>
+      <!-- <button (click)="drawer.toggle()">打开侧边栏</button> -->
     </main>
     <footer>
       <app-footer></app-footer>
