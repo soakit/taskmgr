@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  today = 'day'
+
   constructor() { }
 
   ngOnInit() {
+    this.today = `day${new Date().getDate()}`
   }
 
 }
