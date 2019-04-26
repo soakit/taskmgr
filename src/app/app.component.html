@@ -1,12 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-drawer-container>
+<mat-drawer-container [class.myapp-dark-theme]="darkTheme">
   <mat-drawer #drawer mode="over">
     <app-sidebar></app-sidebar>
   </mat-drawer>
 
   <div class="site">
     <header>
-      <app-header (toggle)="drawer.toggle()"></app-header>
+      <app-header (toggle)="drawer.toggle()" (toggleDarkTheme)="switchTheme($event.checked)"></app-header>
     </header>
     <main>
       <!-- <button (click)="drawer.toggle()">打开侧边栏</button> -->
