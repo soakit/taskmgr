@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser'
 export const loadSvgRes = (ir: MatIconRegistry, ds: DomSanitizer) => {
   const path = 'assets/img/'
   const dayPath = 'assets/img/days/'
+  ir.addSvgIconSetInNamespace('avatars', ds.bypassSecurityTrustResourceUrl(`${path}avatars.svg`))
   ir.addSvgIcon(
     'day',
     ds.bypassSecurityTrustResourceUrl(`${path}day.svg`)

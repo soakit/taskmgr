@@ -67,7 +67,6 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "hrmWarning": false,
           "options": {
             "browserTarget": "taskmgr:build"
           },
