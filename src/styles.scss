@@ -26,3 +26,9 @@ html, body, app-root, .site {
 .full-width {
   width: 100%;
 }
+
+.justify {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+}

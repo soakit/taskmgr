@@ -28,11 +28,22 @@
           formControlName="repeat"
         />
       </mat-form-field>
-      <mat-grid-list cols="6">
+      <mat-grid-list cols="8" gutterSize="12">
         <mat-grid-tile *ngFor="let item of items">
           <mat-icon [svgIcon]="item" class="avatar"></mat-icon>
         </mat-grid-tile>
       </mat-grid-list>
+      <p>
+        <button mat-raised-button color="primary" type="submit">
+          提交
+        </button>
+      </p>
     </mat-card-content>
+    <mat-card-actions>
+      <p class="justify">
+        <a routerLink="/login">已有账户</a>
+        <a routerLink="/forgot">忘记密码</a>
+      </p>
+    </mat-card-actions>
   </mat-card>
 </form>
