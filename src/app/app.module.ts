@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialModule } from './material.module'
 import { LoginModule } from './login/login.module'
 
+import { ProjectModule } from './project/project.module';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -16,7 +18,8 @@ import { LoginModule } from './login/login.module'
     BrowserAnimationsModule,
     CoreModule,
     MaterialModule,
-    LoginModule
+    LoginModule,
+    ProjectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
