@@ -25,7 +25,8 @@ export class ProjectListComponent implements OnInit {
   ngOnInit() {}
 
   openNewProjectDialog() {
-    const ref = this.dialog.open(NewProjectComponent, {data: 'this is dialog data'})
+    // TODO:dark变成动态
+    const ref = this.dialog.open(NewProjectComponent, { data: { dark: false } })
     ref.afterClosed().subscribe(res => {
       console.log(JSON.stringify(res))
     })
