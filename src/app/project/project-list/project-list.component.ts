@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { MatDialog } from '@angular/material'
+import { NewProjectComponent } from '../new-project/new-project.component'
 
 @Component({
   selector: 'app-project-list',
@@ -18,7 +20,14 @@ export class ProjectListComponent implements OnInit {
       coverImg: 'http://ui.qzone.com/400x400'
     }
   ]
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit() {}
+
+  openNewProjectDialog() {
+    const ref = this.dialog.open(NewProjectComponent, {data: 'this is dialog data'})
+    ref.afterClosed().subscribe(res => {
+      console.log(JSON.stringify(res))
+    })
+  }
 }
