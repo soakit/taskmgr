@@ -32,3 +32,7 @@ html, body, app-root, .site {
   justify-content: space-between;
   padding: 0 8px;
 }
+
+.cdk-global-overlay-wrapper {
+  z-index: 1001;
+}
