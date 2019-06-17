@@ -25,6 +25,18 @@ export const loadSvgRes = (ir: MatIconRegistry, ds: DomSanitizer) => {
     'projects',
     ds.bypassSecurityTrustResourceUrl(`${path}projects.svg`)
   )
+  ir.addSvgIcon(
+    'move',
+    ds.bypassSecurityTrustResourceUrl(`${path}move.svg`)
+  )
+  ir.addSvgIcon(
+    'add',
+    ds.bypassSecurityTrustResourceUrl(`${path}add.svg`)
+  )
+  ir.addSvgIcon(
+    'delete',
+    ds.bypassSecurityTrustResourceUrl(`${path}delete.svg`)
+  )
   const days = Array.apply(null, new Array(31)).map((elem, index) => index + 1)
   days.forEach(d => {
     ir.addSvgIcon(

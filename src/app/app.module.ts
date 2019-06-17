@@ -9,6 +9,7 @@ import { MaterialModule } from './material.module'
 import { LoginModule } from './login/login.module'
 
 import { ProjectModule } from './project/project.module';
+import { TaskModule } from './task/task.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,8 @@ import { ProjectModule } from './project/project.module';
     CoreModule,
     MaterialModule,
     LoginModule,
-    ProjectModule
+    ProjectModule,
+    TaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
