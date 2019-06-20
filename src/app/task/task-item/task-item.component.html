@@ -1,3 +1,22 @@
-<p>
-  task-item works!
-</p>
+<mat-list-item
+  class="container"
+  [ngClass]="{
+    'priority-normal': item.priority === 3,
+    'priority-important': item.priority === 2,
+    'priority-emergency': item.priority === 1
+  }"
+>
+  <mat-checkbox class="status" [checked]="item.completed"></mat-checkbox>
+  <div mat-line class="content" [ngClass]="{ completed: item.completed }">
+    <span [matTooltip]="item.desc">
+      {{ item.desc }}
+    </span>
+  </div>
+  <div mat-line class="bottem-bar">
+    <span class="due-date" *ngIf="item.dueDate">
+      {{ item.dueDate | date: 'yyyy-MM-dd' }}
+    </span>
+    <mat-icon class="reminder" *ngIf="item.reminder">alarm</mat-icon>
+  </div>
+  <mat-icon mat-list-avatar class="avatar" [svgIcon]="avatar"></mat-icon>
+</mat-list-item>

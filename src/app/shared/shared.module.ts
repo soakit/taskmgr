@@ -11,7 +11,9 @@ import {
   MatGridListModule,
   MatDialogModule,
   MatAutocompleteModule,
-  MatMenuModule
+  MatMenuModule,
+  MatCheckboxModule,
+  MatTooltipModule,
 } from '@angular/material'
 
 @NgModule({
@@ -28,7 +30,9 @@ import {
     MatGridListModule,
     MatDialogModule,
     MatAutocompleteModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCheckboxModule,
+    MatTooltipModule,
   ],
   exports: [
     CommonModule,
@@ -42,7 +46,9 @@ import {
     MatGridListModule,
     MatDialogModule,
     MatAutocompleteModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCheckboxModule,
+    MatTooltipModule,
   ]
 })
 export class SharedModule {}
