@@ -12,6 +12,5 @@ export class TaskItemComponent implements OnInit {
 
   ngOnInit() {
     this.avatar = this.item.owner ? this.item.owner.avatar : 'unassigned'
-    console.log(this.avatar, this.item)
   }
 }
