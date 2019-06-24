@@ -26,8 +26,7 @@ export class ProjectListComponent implements OnInit {
   ngOnInit() {}
 
   openNewProjectDialog() {
-    // TODO:dark变成动态
-    const ref = this.dialog.open(NewProjectComponent, { data: { dark: false } })
+    const ref = this.dialog.open(NewProjectComponent, { data: { title: '新增项目' } })
     ref.afterClosed().subscribe(res => {
       console.log(JSON.stringify(res))
     })
@@ -36,5 +35,9 @@ export class ProjectListComponent implements OnInit {
   launchInviteDialog() {
     // TODO:dark变成动态
     this.dialog.open(InviteComponent, { data: { dark: false } })
+  }
+
+  launchUpdateDialog() {
+    this.dialog.open(NewProjectComponent, { data: { title: '编辑项目' } })
   }
 }
