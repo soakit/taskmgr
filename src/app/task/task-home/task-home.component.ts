@@ -1,3 +1,4 @@
+import { NewTaskListComponent } from './../new-task-list/new-task-list.component';
 import { MoveTaskComponent } from './../move-task/move-task.component'
 import { MatDialog } from '@angular/material'
 import { Component, OnInit } from '@angular/core'
@@ -97,6 +98,18 @@ export class TaskHomeComponent implements OnInit {
   launchUpdateTaskDialog(task) {
     this.dialog.open(NewTaskComponent, {
       data: { title: '修改任务', task }
+    })
+  }
+
+  lanuchEditListDialog() {
+    this.dialog.open(NewTaskListComponent, {
+      data: { title: '修改列表名称' }
+    })
+  }
+
+  lanuchNewListDialog() {
+    this.dialog.open(NewTaskListComponent, {
+      data: { title: '新增列表' }
     })
   }
 }
