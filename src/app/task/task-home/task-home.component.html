@@ -4,6 +4,7 @@
       [header]="list.name"
       (newTask)="lanuchNewTaskDialog()"
       (moveAll)="lanuchMoveTaskDialog()"
+      (deleteAll)="lanuchDeleteTaskDialog()"
     ></app-task-header>
     <app-task-item
       *ngFor="let task of list.tasks"

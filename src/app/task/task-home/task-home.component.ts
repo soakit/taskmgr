@@ -2,6 +2,7 @@ import { MoveTaskComponent } from './../move-task/move-task.component'
 import { MatDialog } from '@angular/material'
 import { Component, OnInit } from '@angular/core'
 import { NewTaskComponent } from '../new-task/new-task.component'
+import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-task-home',
@@ -83,6 +84,13 @@ export class TaskHomeComponent implements OnInit {
   lanuchMoveTaskDialog() {
     this.dialog.open(MoveTaskComponent, {
       data: { lists: this.lists }
+    })
+  }
+
+  lanuchDeleteTaskDialog() {
+    const ref = this.dialog.open(ConfirmDialogComponent, { data: { title: '删除任务列表', content: '确认删除任务列表吗？' } })
+    ref.afterClosed().subscribe(res => {
+      console.log(res)
     })
   }
 
