@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component'
 import { SidebarComponent } from './sidebar/sidebar.component'
 import { loadSvgRes } from '../utils/svg.util'
 
+import 'hammerjs'
+
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SidebarComponent],
   imports: [
