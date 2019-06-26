@@ -23,6 +23,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 
 @NgModule({
   declarations: [ConfirmDialogComponent],
+  entryComponents: [ConfirmDialogComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
