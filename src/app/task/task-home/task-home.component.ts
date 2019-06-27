@@ -1,14 +1,15 @@
 import { NewTaskListComponent } from './../new-task-list/new-task-list.component';
 import { MoveTaskComponent } from './../move-task/move-task.component'
 import { MatDialog } from '@angular/material'
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core'
 import { NewTaskComponent } from '../new-task/new-task.component'
 import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-task-home',
   templateUrl: './task-home.component.html',
-  styleUrls: ['./task-home.component.scss']
+  styleUrls: ['./task-home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskHomeComponent implements OnInit {
   lists = [
@@ -72,7 +73,7 @@ export class TaskHomeComponent implements OnInit {
     }
   ]
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private cd: ChangeDetectorRef) {}
 
   ngOnInit() {}
 
@@ -92,6 +93,7 @@ export class TaskHomeComponent implements OnInit {
     const ref = this.dialog.open(ConfirmDialogComponent, { data: { title: '删除任务列表', content: '确认删除任务列表吗？' } })
     ref.afterClosed().subscribe(res => {
       console.log(res)
+      this.cd.markForCheck()
     })
   }
 

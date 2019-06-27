@@ -1,5 +1,5 @@
 import { ConfirmDialogComponent } from './../../shared/confirm-dialog/confirm-dialog.component';
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core'
 import { MatDialog } from '@angular/material'
 import { NewProjectComponent } from '../new-project/new-project.component'
 import { InviteComponent } from '../invite/invite.component'
@@ -7,7 +7,8 @@ import { InviteComponent } from '../invite/invite.component'
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
-  styleUrls: ['./project-list.component.scss']
+  styleUrls: ['./project-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectListComponent implements OnInit {
   projects = [
@@ -22,7 +23,7 @@ export class ProjectListComponent implements OnInit {
       coverImg: 'http://ui.qzone.com/400x400'
     }
   ]
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private cd: ChangeDetectorRef) {}
 
   ngOnInit() {}
 
@@ -30,6 +31,7 @@ export class ProjectListComponent implements OnInit {
     const ref = this.dialog.open(NewProjectComponent, { data: { title: '新增项目' } })
     ref.afterClosed().subscribe(res => {
       console.log(JSON.stringify(res))
+      this.cd.markForCheck()
     })
   }
 
@@ -46,6 +48,7 @@ export class ProjectListComponent implements OnInit {
     const ref = this.dialog.open(ConfirmDialogComponent, { data: { title: '删除项目', content: '确认删除项目吗？' } })
     ref.afterClosed().subscribe(res => {
       console.log(res)
+      this.cd.markForCheck()
     })
   }
 }

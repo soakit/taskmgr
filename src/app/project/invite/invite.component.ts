@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core'
 
 @Component({
   selector: 'app-invite',
   templateUrl: './invite.component.html',
-  styleUrls: ['./invite.component.scss']
+  styleUrls: ['./invite.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InviteComponent implements OnInit {
   items = [
