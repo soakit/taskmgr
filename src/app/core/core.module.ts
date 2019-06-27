@@ -1,12 +1,16 @@
 import { NgModule, SkipSelf, Optional } from '@angular/core'
 import { MatIconRegistry } from '@angular/material'
-import { DomSanitizer } from '@angular/platform-browser'
+import { DomSanitizer, BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule } from '@angular/common/http'
+
 import { SharedModule } from '../shared/shared.module'
 import { HeaderComponent } from './header/header.component'
 import { FooterComponent } from './footer/footer.component'
 import { SidebarComponent } from './sidebar/sidebar.component'
 import { loadSvgRes } from '../utils/svg.util'
+
+import { AppRoutingModule } from '../app-routing.module'
 
 import 'hammerjs'
 
@@ -14,9 +18,17 @@ import 'hammerjs'
   declarations: [HeaderComponent, FooterComponent, SidebarComponent],
   imports: [
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
-  exports: [HeaderComponent, FooterComponent, SidebarComponent]
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    AppRoutingModule
+  ]
 })
 export class CoreModule {
   constructor(
