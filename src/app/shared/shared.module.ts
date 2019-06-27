@@ -21,7 +21,7 @@ import {
   MatSelectModule,
 } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
-
+import { DirectiveModule } from './../directive/directive.module';
 @NgModule({
   declarations: [ConfirmDialogComponent],
   entryComponents: [ConfirmDialogComponent],
@@ -45,6 +45,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    DirectiveModule
   ],
   exports: [
     CommonModule,
@@ -66,6 +67,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    DirectiveModule
   ]
 })
 export class SharedModule {}
