@@ -2,14 +2,15 @@
   <app-task-list
     class="list-container"
     *ngFor="let list of lists"
+    [ngStyle]="{order: list.order}"
     appDrop
     [appDrag]="true"
     [dropTags]="['task-item', 'task-list']"
     [dragEnterClass]="'drag-enter'"
     [dragTag]="'task-list'"
     [draggedClass]="'drag-start'"
-    [dragData]="taskList"
-    (dropped)="handleMove($event, taskList)"
+    [dragData]="list"
+    (dropped)="handleMove($event, list)"
   >
     <app-task-header
       [header]="list.name"
